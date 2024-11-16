@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:01:06 by iammar            #+#    #+#             */
-/*   Updated: 2024/11/16 17:29:11 by iammar           ###   ########.fr       */
+/*   Updated: 2024/11/16 20:48:23 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*get_line(char **str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*str[FD_MAX];
 	char		*tmp;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -68,14 +68,14 @@ char	*get_next_line(int fd)
 	tmp = (char *)malloc(BUFFER_SIZE + 1);
 	if (!tmp)
 	{
-		if (str)
-			free(str);
-		str = NULL;
+		if (str[fd])
+			free(str[fd]);
+		str[fd] = NULL;
 		return (NULL);
 	}
-	str = read_file(fd, tmp, str);
+	str[fd] = read_file(fd, tmp, str[fd]);
 	free(tmp);
-	return (get_line(&str));
+	return (get_line(&str[fd]));
 }
 
 // int	main(void)

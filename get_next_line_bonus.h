@@ -13,6 +13,9 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# ifndef FD_MAX
+#  define FD_MAX 1024
+# endif
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>

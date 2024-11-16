@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:00:44 by iammar            #+#    #+#             */
-/*   Updated: 2024/11/16 17:29:17 by iammar           ###   ########.fr       */
+/*   Updated: 2024/11/16 21:21:05 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ char	*get_next_line(int fd)
 // 	if ((line = get_next_line(fd)) != NULL)
 // 	{
 // 		printf("%s", line);
+// 		free(line);
 // 	}
 // 	close(fd);
 // 	return (0);
