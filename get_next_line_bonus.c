@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <iammar@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:00:44 by iammar            #+#    #+#             */
-/*   Updated: 2024/11/16 17:29:17 by iammar           ###   ########.fr       */
+/*   Created: 2024/11/11 20:01:06 by iammar            #+#    #+#             */
+/*   Updated: 2024/11/16 17:29:11 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_file(int fd, char *tmp, char *str)
 {
@@ -81,12 +81,21 @@ char	*get_next_line(int fd)
 // int	main(void)
 // {
 // 	int fd = open("file.txt", O_RDONLY);
-
+// 	int fd1 = open("file1.txt", O_RDONLY);
+// 	int fd2 = open("file2.txt", O_RDONLY);
 // 	char *line;
-// 	if ((line = get_next_line(fd)) != NULL)
-// 	{
+// 	line = get_next_line(fd);
 // 		printf("%s", line);
-// 	}
+// 	line = get_next_line(fd2);
+// 	printf("%s", line);
+// 	line = get_next_line(fd1);
+// 	printf("%s", line);
+// 	line = get_next_line(fd);
+// 	printf("%s", line);
+// 	line = get_next_line(fd2);
+// 	printf("%s", line);
+// 	line = get_next_line(fd1);
+// 	printf("%s", line);
 // 	close(fd);
 // 	return (0);
 // }
