@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:00:56 by iammar            #+#    #+#             */
-/*   Updated: 2024/11/16 14:03:09 by iammar           ###   ########.fr       */
+/*   Updated: 2024/11/18 10:20:41 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strdup(char *str)
 {
-	char	*dup;
 	int		i;
+	char	*dup;
 
+	if (*str == '\0')
+		return (NULL);
 	dup = (char *)malloc((ft_strlen(str) + 1) * sizeof(char));
 	if (dup == NULL)
 	{
@@ -57,7 +59,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (s1)
 		ft_memcpy(result, s1, len1);
 	ft_memcpy(result + len1, s2, len2 + 1);
-	free(s1);
 	return (result);
 }
 
